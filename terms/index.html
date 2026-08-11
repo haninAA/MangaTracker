@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manga Tracker Terms of Use" />
+  <title>Terms of Use | Manga Tracker</title>
+  <style>
+    :root{
+      --primary:#0065F4;
+      --primary-dark:#000F2B;
+      --secondary:#31BDFF;
+      --accent:#F12833;
+      --surface:#FFFFFF;
+      --border:#AEBACB;
+      --text:#0A1633;
+      --muted:#64748B;
+      --bg:#F5F9FF;
+      --soft:#EAF3FF;
+      --card:#FFFFFF;
+      --shadow:0 14px 34px rgba(0, 15, 43, .08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(49,189,255,.18), transparent 28%),
+        linear-gradient(180deg,#fff 0%, var(--bg) 26%, #fff 100%);
+      color:var(--text);
+      line-height:1.72;
+    }
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(14px);
+      background:rgba(255,255,255,.88);
+      border-bottom:1px solid rgba(174,186,203,.32);
+    }
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      padding:16px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:var(--primary-dark);
+      letter-spacing:-.02em;
+      font-size:20px;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--secondary),var(--primary));
+      box-shadow:0 8px 18px rgba(0,101,244,.24);
+      font-weight:900;
+    }
+    .nav-links{
+      display:flex;gap:24px;align-items:center;font-size:14px;font-weight:600;
+    }
+    .nav-links a{color:var(--primary-dark)}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:var(--primary);
+      color:white !important;
+      box-shadow:0 8px 18px rgba(0,101,244,.2);
+    }
+    .pill:hover{text-decoration:none;filter:brightness(.98)}
+
+    .hero{
+      padding:72px 24px 54px;
+      background:
+        linear-gradient(135deg, rgba(49,189,255,.98), rgba(0,101,244,.98)),
+        var(--primary);
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;right:-110px;top:-120px;
+      width:420px;height:420px;border-radius:50%;
+      border:70px solid rgba(255,255,255,.08);
+    }
+    .hero-inner{
+      max-width:1180px;margin:auto;position:relative;z-index:2;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      font-weight:700;font-size:13px;
+    }
+    h1{
+      font-size:clamp(42px,7vw,72px);
+      margin:18px 0 10px;
+      letter-spacing:-.045em;
+      line-height:1;
+    }
+    .hero p{
+      max-width:700px;
+      margin:0;
+      font-size:18px;
+      color:rgba(255,255,255,.92);
+    }
+    .updated{
+      margin-top:22px;
+      font-size:14px;
+      font-weight:700;
+      display:flex;align-items:center;gap:8px;
+    }
+
+    .page{
+      max-width:1180px;
+      margin:auto;
+      padding:36px 24px 72px;
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:28px;
+      align-items:start;
+    }
+    .toc{
+      position:sticky;
+      top:88px;
+      background:var(--surface);
+      border:1px solid rgba(174,186,203,.34);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      max-height:calc(100vh - 112px);
+      overflow:auto;
+    }
+    .toc h2{
+      margin:0 0 14px;
+      font-size:16px;
+      color:var(--primary-dark);
+    }
+    .toc ol{
+      margin:0;
+      padding-left:22px;
+    }
+    .toc li{margin:5px 0}
+    .toc a{
+      color:#38506F;
+      font-size:13px;
+    }
+    .toc a:hover{color:var(--primary)}
+
+    .content{
+      background:var(--card);
+      border:1px solid rgba(174,186,203,.34);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:34px clamp(22px,4vw,48px);
+    }
+    .intro{
+      background:linear-gradient(135deg,rgba(0,101,244,.08),rgba(49,189,255,.10));
+      border:1px solid rgba(0,101,244,.13);
+      border-radius:18px;
+      padding:20px 22px;
+      margin-bottom:28px;
+    }
+    section{
+      scroll-margin-top:110px;
+      padding:12px 0 26px;
+      border-bottom:1px solid #E7EDF5;
+    }
+    section:last-of-type{border-bottom:none}
+    h2.section-title{
+      margin:10px 0 12px;
+      font-size:25px;
+      line-height:1.25;
+      color:var(--primary-dark);
+      letter-spacing:-.02em;
+    }
+    .section-number{
+      color:var(--primary);
+      margin-right:6px;
+    }
+    p{margin:10px 0}
+    ul{padding-left:22px}
+    li{margin:6px 0}
+    strong{color:var(--primary-dark)}
+    .note{
+      padding:18px 20px;
+      border-left:4px solid var(--secondary);
+      background:#F3FAFF;
+      border-radius:12px;
+      margin:16px 0;
+    }
+    .important{
+      padding:18px 20px;
+      border-left:4px solid var(--primary);
+      background:var(--soft);
+      border-radius:12px;
+      margin:16px 0;
+    }
+    .contact-card{
+      background:var(--primary-dark);
+      color:white;
+      border-radius:18px;
+      padding:22px;
+      margin-top:14px;
+    }
+    .contact-card a{color:var(--secondary)}
+    .agreement{
+      margin-top:26px;
+      background:linear-gradient(135deg,var(--primary),#0A7CFF);
+      color:white;
+      padding:20px 22px;
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(0,101,244,.2);
+      font-weight:700;
+    }
+
+    footer{
+      background:var(--primary-dark);
+      color:#D8E5F7;
+      padding:34px 24px;
+      text-align:center;
+      font-size:14px;
+    }
+    footer a{color:var(--secondary)}
+
+    @media (max-width:900px){
+      .page{grid-template-columns:1fr}
+      .toc{position:relative;top:auto;max-height:none}
+      .nav-links{display:none}
+    }
+    @media (max-width:600px){
+      .nav{padding:13px 16px}
+      .hero{padding:54px 18px 42px}
+      .page{padding:22px 14px 52px}
+      .content{padding:24px 18px;border-radius:20px}
+      .toc{padding:18px;border-radius:18px}
+      h2.section-title{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">MT</div>
+        <span>Manga Tracker</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="https://mangatracker.app/">Home</a>
+        <a href="#contact">Contact</a>
+        <a class="pill" href="#terms">Terms of Use</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Legal · Manga Tracker</div>
+      <h1>Terms of Use</h1>
+      <p>Please read these Terms of Use carefully before accessing or using Manga Tracker.</p>
+      <div class="updated">Last Updated: August 10, 2026</div>
+    </div>
+  </section>
+
+  <main class="page" id="terms">
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#about">About Manga Tracker</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#accounts">User Accounts</a></li>
+        <li><a href="#user-content">Information Added by Users</a></li>
+        <li><a href="#external-websites">External Websites</a></li>
+        <li><a href="#webview">In-App Browser & WebView</a></li>
+        <li><a href="#third-party-content">Third-Party Content & IP</a></li>
+        <li><a href="#advertising">Advertising</a></li>
+        <li><a href="#remove-ads">One-Time Remove Ads Purchase</a></li>
+        <li><a href="#what-remove-ads-removes">What Remove Ads Removes</a></li>
+        <li><a href="#payments">Payment Processing</a></li>
+        <li><a href="#revenuecat">RevenueCat & Entitlements</a></li>
+        <li><a href="#restore">Restoring Purchases</a></li>
+        <li><a href="#refunds">Refunds & Billing Problems</a></li>
+        <li><a href="#no-subscription">No Recurring Subscription</a></li>
+        <li><a href="#acceptable-use">Acceptable Use</a></li>
+        <li><a href="#availability">Availability & Changes</a></li>
+        <li><a href="#data">Data, Sync, Backup & Export</a></li>
+        <li><a href="#deletion">Account Deletion</a></li>
+        <li><a href="#termination">Suspension & Termination</a></li>
+        <li><a href="#mt-ip">Manga Tracker IP</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#third-party-services">Third-Party Services</a></li>
+        <li><a href="#app-store">App Store Terms</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#law">Governing Law & Consumer Rights</a></li>
+        <li><a href="#severability">Severability</a></li>
+        <li><a href="#agreement">Entire Agreement</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </aside>
+
+    <article class="content">
+      <div class="intro">
+        These Terms of Use (“Terms”) govern your access to and use of the Manga Tracker mobile application, website, and related services (collectively, the “Service”).
+        By accessing or using Manga Tracker, you agree to these Terms. If you do not agree to these Terms, you should not use the Service.
+      </div>
+
+      <section id="about">
+        <h2 class="section-title"><span class="section-number">1.</span>About Manga Tracker</h2>
+        <p>Manga Tracker is a personal organization and reading-tracking application that allows users to organize manga, manhwa, manhua, webtoons, comics, and similar reading material.</p>
+        <p>Depending on the version of the Service and the features available to you, Manga Tracker may allow you to:</p>
+        <ul>
+          <li>Add and organize titles into reading lists</li>
+          <li>Track reading status and reading progress</li>
+          <li>Save links to external websites</li>
+          <li>Open saved links using an in-app browser or WebView</li>
+          <li>Add or manage cover images and title information</li>
+          <li>Assign genres, categories, types, and statuses</li>
+          <li>Search, filter, and sort saved titles</li>
+          <li>View reading statistics</li>
+          <li>Export certain information</li>
+          <li>Use home-screen widgets or similar device features</li>
+          <li>Synchronize information associated with your account</li>
+          <li>Access other organizational and tracking features that may be introduced from time to time</li>
+        </ul>
+        <p>Manga Tracker is an organizational and tracking tool. Manga Tracker does not operate as a manga hosting, publishing, distribution, or content-licensing service.</p>
+        <p>Unless expressly stated otherwise, Manga Tracker does not host, upload, publish, sell, license, or distribute the manga, manhwa, manhua, webtoons, comics, or other third-party reading content that users may access through links stored in the Service.</p>
+      </section>
+
+      <section id="eligibility">
+        <h2 class="section-title"><span class="section-number">2.</span>Eligibility</h2>
+        <p>You may use Manga Tracker only if you are legally permitted to use the Service and agree to these Terms under the laws applicable to you.</p>
+        <p>If you have not reached the age at which you may legally agree to these Terms in your country or region, you may use Manga Tracker only with the permission or supervision of a parent or legal guardian where required by applicable law.</p>
+      </section>
+
+      <section id="accounts">
+        <h2 class="section-title"><span class="section-number">3.</span>User Accounts</h2>
+        <p>Certain features of Manga Tracker may require a user account.</p>
+        <p>You are responsible for maintaining the confidentiality and security of your account credentials and for activity conducted through your account to the extent permitted by applicable law.</p>
+        <p>You must not:</p>
+        <ul>
+          <li>Access or attempt to access another person's account without authorization</li>
+          <li>Provide false or misleading account information where accurate information is required</li>
+          <li>Use the Service to impersonate another person or organization</li>
+          <li>Attempt to bypass authentication or security mechanisms</li>
+        </ul>
+        <p>If you believe that your account has been accessed without authorization, you should contact us as soon as reasonably possible.</p>
+      </section>
+
+      <section id="user-content">
+        <h2 class="section-title"><span class="section-number">4.</span>Information and Content Added by Users</h2>
+        <p>Manga Tracker allows users to add and store information relating to their reading activity.</p>
+        <p>This information may include, for example:</p>
+        <ul>
+          <li>Titles</li>
+          <li>Website URLs</li>
+          <li>Cover images</li>
+          <li>Reading progress</li>
+          <li>Reading status</li>
+          <li>Genres and categories</li>
+          <li>Notes or other user-entered information</li>
+        </ul>
+        <p>You remain responsible for information and materials that you choose to add to the Service.</p>
+        <p>You must not knowingly use Manga Tracker to store, submit, or distribute material in a manner that violates applicable law or infringes the rights of another person.</p>
+        <p>Manga Tracker does not claim ownership of content or information that you independently provide to the Service.</p>
+        <p>You grant Manga Tracker the limited rights reasonably necessary to store, process, display, synchronize, back up, transmit, and otherwise handle that information solely as necessary to operate and provide the Service.</p>
+      </section>
+
+      <section id="external-websites">
+        <h2 class="section-title"><span class="section-number">5.</span>External Websites and Saved Links</h2>
+        <p>Manga Tracker allows users to save URLs that lead to third-party websites.</p>
+        <p>These websites are independent from Manga Tracker.</p>
+        <p>Unless expressly stated otherwise, Manga Tracker does not own, operate, control, endorse, sponsor, approve, or maintain websites that users save or visit through the Service.</p>
+        <p>The ability to add, save, display, or open a URL through Manga Tracker does not mean that Manga Tracker:</p>
+        <ul>
+          <li>Is affiliated with the website</li>
+          <li>Endorses the website</li>
+          <li>Has reviewed or approved its content</li>
+          <li>Has verified that its content is lawful</li>
+          <li>Has obtained rights to the content available through that website</li>
+          <li>Guarantees that the website is safe or available</li>
+        </ul>
+        <p>You are responsible for determining whether your access to and use of a third-party website complies with the laws, terms, and rules applicable to you.</p>
+      </section>
+
+      <section id="webview">
+        <h2 class="section-title"><span class="section-number">6.</span>In-App Browser and WebView</h2>
+        <p>Manga Tracker may allow saved third-party URLs to be opened inside the application through an in-app browser, WebView, or similar technology.</p>
+        <p>The in-app browser is provided as a convenience that allows users to access URLs they have saved or selected.</p>
+        <p>Displaying a third-party website inside Manga Tracker does not make that website or its content part of Manga Tracker.</p>
+        <p>Third-party websites remain independently operated and may collect information, use cookies or similar technologies, display advertisements, request permissions, redirect users, or apply their own terms and privacy practices.</p>
+        <p>Your interaction with a third-party website is subject to that website's own terms, privacy policy, and other applicable policies.</p>
+        <p>Manga Tracker does not control and is not responsible for:</p>
+        <ul>
+          <li>Third-party website content</li>
+          <li>Website availability</li>
+          <li>Website security</li>
+          <li>Cookies or tracking technologies used by third-party websites</li>
+          <li>Advertisements displayed by third-party websites</li>
+          <li>Pop-ups, redirects, or other website behavior</li>
+          <li>Website terms or privacy practices</li>
+          <li>Accuracy of information displayed by a website</li>
+          <li>Copyright or licensing status of website content</li>
+          <li>Changes made by a third-party website</li>
+          <li>Content that becomes unavailable, restricted, moved, blocked, or removed</li>
+          <li>Compatibility between a website and Manga Tracker's in-app browser</li>
+          <li>Loss, damage, or disputes resulting from your interaction with a third-party website</li>
+        </ul>
+        <p>Manga Tracker does not guarantee that any particular third-party website will continue to work through the in-app browser.</p>
+      </section>
+
+      <section id="third-party-content">
+        <h2 class="section-title"><span class="section-number">7.</span>Third-Party Content and Intellectual Property</h2>
+        <p>Manga, manhwa, manhua, webtoons, comics, artwork, characters, illustrations, trademarks, logos, website content, and other third-party materials belong to their respective owners or rights holders.</p>
+        <p>Manga Tracker does not claim ownership of third-party content merely because a user stores a title, image, URL, progress record, or other reference to that content in the Service.</p>
+        <p>Manga Tracker does not grant users any license or right to reproduce, download, distribute, publish, modify, or otherwise use copyrighted third-party material.</p>
+        <p>Users are responsible for complying with applicable copyright laws and with the terms imposed by third-party websites and rights holders.</p>
+        <p>If you believe that material directly hosted or controlled by Manga Tracker infringes your intellectual property rights, please contact us using the contact information provided below.</p>
+      </section>
+
+      <section id="advertising">
+        <h2 class="section-title"><span class="section-number">8.</span>Advertising</h2>
+        <p>The free version of Manga Tracker may display advertisements.</p>
+        <p>Advertisements displayed by Manga Tracker may be provided through third-party advertising providers.</p>
+        <p>The format, frequency, placement, availability, and content of advertisements may change from time to time.</p>
+        <p>Manga Tracker does not necessarily endorse any product, service, website, company, or claim shown in a third-party advertisement.</p>
+        <p>Any interaction between you and an advertiser is between you and that advertiser and may be governed by the advertiser's own terms and privacy practices.</p>
+        <p>Information concerning advertising technologies and the processing of personal information for advertising purposes is addressed separately in the Manga Tracker Privacy Policy.</p>
+      </section>
+
+      <section id="remove-ads">
+        <h2 class="section-title"><span class="section-number">9.</span>One-Time Remove Ads Purchase</h2>
+        <div class="important"><strong>Remove Ads is a one-time purchase and is not a subscription.</strong></div>
+        <p>Manga Tracker may offer an optional one-time purchase that permanently removes advertisements served by Manga Tracker from the eligible version of the Service (“Remove Ads”).</p>
+        <p>It does not renew automatically and does not involve recurring charges from Manga Tracker.</p>
+        <p>You are charged once when the purchase is successfully completed, subject to the billing rules of the applicable app store.</p>
+        <p>On platforms where applicable, Remove Ads is offered as a non-consumable or other equivalent one-time digital purchase.</p>
+        <p>The price displayed to you before purchase is determined or presented through the applicable app store and may vary depending on country, region, currency, taxes, platform pricing, or other factors.</p>
+        <p>Once successfully purchased and recognized by the Service, the Remove Ads entitlement is intended to remain available in accordance with the applicable app store account, purchase record, platform rules, and these Terms.</p>
+      </section>
+
+      <section id="what-remove-ads-removes">
+        <h2 class="section-title"><span class="section-number">10.</span>What Remove Ads Removes</h2>
+        <p>The Remove Ads purchase removes advertisements that Manga Tracker controls and displays as part of the Manga Tracker application.</p>
+        <p>It does <strong>not</strong> remove advertisements or promotional content displayed by third-party websites.</p>
+        <div class="note">If you open a manga or other website through Manga Tracker's in-app browser or WebView and that website displays its own advertisements, pop-ups, banners, sponsored content, or promotional material, those advertisements are controlled by that third-party website and may continue to appear after you purchase Remove Ads.</div>
+        <p>The Remove Ads purchase does not include an ad-blocking service for external websites.</p>
+        <p>The purchase also does not grant access to paid content on third-party websites or remove any third-party website restrictions.</p>
+      </section>
+
+      <section id="payments">
+        <h2 class="section-title"><span class="section-number">11.</span>Payment Processing</h2>
+        <p>Payments for Remove Ads are processed through the applicable app marketplace or payment system made available for the version of Manga Tracker you are using.</p>
+        <p>For applications distributed through Apple App Store, purchases may be processed using Apple's in-app purchase system.</p>
+        <p>For applications distributed through Google Play, purchases may be processed using Google Play's billing system.</p>
+        <p>Manga Tracker does not directly receive or store your complete payment-card information when your transaction is processed by the applicable app store.</p>
+        <p>Your purchase is also subject to the payment terms and policies of the applicable app store.</p>
+      </section>
+
+      <section id="revenuecat">
+        <h2 class="section-title"><span class="section-number">12.</span>RevenueCat and Purchase Entitlements</h2>
+        <p>Manga Tracker may use RevenueCat to assist with in-app purchase infrastructure.</p>
+        <p>RevenueCat may be used to:</p>
+        <ul>
+          <li>Validate or recognize purchase information</li>
+          <li>Determine whether the Remove Ads entitlement is active</li>
+          <li>Associate an eligible purchase with the appropriate entitlement</li>
+          <li>Restore eligible purchases</li>
+          <li>Synchronize purchase status</li>
+          <li>Provide purchase-related analytics or technical functionality</li>
+        </ul>
+        <p>RevenueCat is not a separate subscription offered by Manga Tracker.</p>
+        <p>Using RevenueCat does not change Remove Ads into a subscription or recurring payment.</p>
+        <p>RevenueCat assists Manga Tracker with managing purchase status and entitlements, while the underlying payment transaction is generally processed by the applicable app store.</p>
+        <p>Additional information about data processed in connection with purchases is provided in the Manga Tracker Privacy Policy.</p>
+      </section>
+
+      <section id="restore">
+        <h2 class="section-title"><span class="section-number">13.</span>Restoring Purchases</h2>
+        <p>Manga Tracker may provide a Restore Purchases function.</p>
+        <p>If you previously purchased Remove Ads through an eligible app store account, you may be able to restore that purchase without purchasing it again.</p>
+        <p>Restoration generally depends on:</p>
+        <ul>
+          <li>The app store account originally used for the purchase</li>
+          <li>The purchase being recognized by the applicable store</li>
+          <li>Applicable platform rules</li>
+          <li>The purchase entitlement being successfully synchronized with Manga Tracker</li>
+        </ul>
+        <p>You may need to use the same Apple ID, Google account, or other relevant store account used for the original purchase.</p>
+        <p>Purchase restoration does not necessarily allow purchases to be transferred between different app-store ecosystems, different store accounts, or platforms where such transfer is not supported.</p>
+        <p>For example, a purchase made through one app marketplace may not automatically transfer to another marketplace.</p>
+      </section>
+
+      <section id="refunds">
+        <h2 class="section-title"><span class="section-number">14.</span>Refunds and Billing Problems</h2>
+        <p>Refund eligibility is generally determined by the marketplace that processed your purchase.</p>
+        <p>If your Remove Ads purchase was processed through Apple App Store or Google Play, requests relating to refunds, payment methods, transaction authorization, or certain billing disputes may need to be submitted to the applicable store.</p>
+        <p>Manga Tracker does not control whether an app store approves or rejects a refund request.</p>
+        <p>Nothing in these Terms limits any refund, cancellation, warranty, or consumer rights that cannot legally be excluded or restricted under applicable law.</p>
+      </section>
+
+      <section id="no-subscription">
+        <h2 class="section-title"><span class="section-number">15.</span>No Recurring Subscription</h2>
+        <p>Manga Tracker currently does not offer a recurring paid subscription as part of the Remove Ads purchase.</p>
+        <p>Purchasing Remove Ads does not:</p>
+        <ul>
+          <li>Start a monthly subscription</li>
+          <li>Start an annual subscription</li>
+          <li>Automatically renew</li>
+          <li>Create recurring Manga Tracker charges</li>
+        </ul>
+        <p>If Manga Tracker introduces a separate subscription or another paid product in the future, that product will be identified separately and its applicable price, billing period, renewal terms, and other required information will be presented before purchase.</p>
+        <p>The introduction of a future paid product will not retroactively convert an existing valid Remove Ads one-time purchase into a recurring subscription.</p>
+      </section>
+
+      <section id="acceptable-use">
+        <h2 class="section-title"><span class="section-number">16.</span>Acceptable Use</h2>
+        <p>You agree not to misuse Manga Tracker.</p>
+        <p>You must not:</p>
+        <ul>
+          <li>Attempt to gain unauthorized access to Manga Tracker systems, servers, databases, or accounts</li>
+          <li>Circumvent or attempt to circumvent security mechanisms</li>
+          <li>Circumvent payment restrictions or fraudulently obtain paid functionality</li>
+          <li>Manipulate purchase receipts, entitlements, transactions, or account information</li>
+          <li>Interfere with the normal operation of the Service</li>
+          <li>Introduce malicious code, malware, or harmful software</li>
+          <li>Use automated tools in a manner that overloads, disrupts, or damages the Service</li>
+          <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Service except to the extent such restrictions are prohibited by applicable law</li>
+          <li>Use Manga Tracker for unlawful purposes</li>
+          <li>Use Manga Tracker in a manner that knowingly infringes intellectual property or other legal rights</li>
+        </ul>
+        <p>We may take reasonable measures to investigate and prevent fraud, abuse, unauthorized access, security threats, or violations of these Terms.</p>
+      </section>
+
+      <section id="availability">
+        <h2 class="section-title"><span class="section-number">17.</span>Availability and Changes to Manga Tracker</h2>
+        <p>We may improve, update, modify, replace, add, or remove features of Manga Tracker from time to time.</p>
+        <p>We do not guarantee that every feature will remain permanently available or function identically on every device, operating system, app version, or geographic location.</p>
+        <p>Features may be affected by:</p>
+        <ul>
+          <li>Operating system changes</li>
+          <li>Device limitations</li>
+          <li>App-store requirements</li>
+          <li>Third-party services</li>
+          <li>Third-party website changes</li>
+          <li>Network availability</li>
+          <li>Security requirements</li>
+          <li>Technical maintenance</li>
+          <li>Legal or regulatory requirements</li>
+        </ul>
+        <p>We may suspend or discontinue all or part of the Service where reasonably necessary.</p>
+        <p>Nothing in this section allows us to remove mandatory consumer rights or paid rights where applicable law prevents us from doing so.</p>
+      </section>
+
+      <section id="data">
+        <h2 class="section-title"><span class="section-number">18.</span>Data, Synchronization, Backup, and Export</h2>
+        <p>Manga Tracker may provide features that store, synchronize, back up, or export certain user information.</p>
+        <p>Although reasonable measures may be used to maintain the Service and protect stored information, no digital storage system can be guaranteed to be completely error-free or permanently available.</p>
+        <p>Users should retain their own copies of information they consider particularly important where appropriate.</p>
+        <p>Manga Tracker is not responsible, to the maximum extent permitted by applicable law, for data loss resulting from circumstances outside its reasonable control, including device loss or failure, third-party service outages, operating system failures, account misuse, network failures, or actions taken by the user.</p>
+        <p>The collection and processing of personal information is addressed in the Manga Tracker Privacy Policy.</p>
+      </section>
+
+      <section id="deletion">
+        <h2 class="section-title"><span class="section-number">19.</span>Account Deletion</h2>
+        <p>Where account functionality is provided, users may be able to request or initiate deletion of their account using the methods made available by Manga Tracker.</p>
+        <p>Account deletion may result in the permanent deletion or anonymization of information associated with the account, subject to legitimate legal, security, fraud-prevention, backup, accounting, or other retention requirements described in the Privacy Policy or required by applicable law.</p>
+        <p>Deleting a Manga Tracker account does not necessarily cancel, erase, or refund a transaction recorded by Apple, Google, or another marketplace.</p>
+        <p>A previously purchased Remove Ads entitlement may remain associated with the relevant app-store purchase history and may be restorable where supported.</p>
+      </section>
+
+      <section id="termination">
+        <h2 class="section-title"><span class="section-number">20.</span>Suspension and Termination</h2>
+        <p>You may stop using Manga Tracker at any time.</p>
+        <p>We may suspend, restrict, or terminate access to the Service where reasonably necessary if we determine that an account or device is being used:</p>
+        <ul>
+          <li>Fraudulently</li>
+          <li>Unlawfully</li>
+          <li>In material violation of these Terms</li>
+          <li>To interfere with the security or operation of the Service</li>
+          <li>To abuse other users or systems</li>
+        </ul>
+        <p>Where appropriate and reasonably possible, we may provide notice before taking such action unless immediate action is necessary for security, legal, fraud-prevention, or operational reasons.</p>
+        <p>Termination or deletion of an account does not automatically create a right to a refund for a completed purchase, except where required by applicable law or applicable app-store rules.</p>
+      </section>
+
+      <section id="mt-ip">
+        <h2 class="section-title"><span class="section-number">21.</span>Manga Tracker Intellectual Property</h2>
+        <p>Manga Tracker and its original software, source code, interface, application design, name, branding, logo, graphics, features, and other proprietary materials are protected by applicable intellectual property laws.</p>
+        <p>Except for the limited rights necessary for you to use the Service, no ownership rights in Manga Tracker are transferred to you.</p>
+        <p>You may not copy, sell, sublicense, reproduce, redistribute, commercially exploit, or create unauthorized derivative works from Manga Tracker's proprietary materials except where expressly authorized or permitted by applicable law.</p>
+        <p>Third-party materials remain owned by their respective rights holders.</p>
+      </section>
+
+      <section id="disclaimer">
+        <h2 class="section-title"><span class="section-number">22.</span>Disclaimer</h2>
+        <p>To the maximum extent permitted by applicable law, Manga Tracker is provided on an “as is” and “as available” basis.</p>
+        <p>We do not guarantee that:</p>
+        <ul>
+          <li>Manga Tracker will always be available</li>
+          <li>The Service will operate without interruption</li>
+          <li>The Service will be entirely free of bugs or technical errors</li>
+          <li>Every external website will operate correctly through the in-app browser</li>
+          <li>Saved links will remain active</li>
+          <li>A third-party website will remain available</li>
+          <li>Third-party content is accurate, safe, lawful, or licensed</li>
+          <li>A third-party website will maintain any particular content</li>
+          <li>Manga Tracker will meet every individual user's requirements</li>
+        </ul>
+        <p>Nothing in these Terms excludes warranties, guarantees, or consumer protections that cannot legally be excluded.</p>
+      </section>
+
+      <section id="liability">
+        <h2 class="section-title"><span class="section-number">23.</span>Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, Manga Tracker and its operator will not be liable for indirect, incidental, special, exemplary, or consequential damages arising out of or relating to:</p>
+        <ul>
+          <li>Your use or inability to use the Service</li>
+          <li>Third-party websites</li>
+          <li>Third-party website content</li>
+          <li>Advertisements operated by third parties</li>
+          <li>Broken, changed, or unavailable external links</li>
+          <li>Actions or omissions of third-party websites</li>
+          <li>Service interruptions outside our reasonable control</li>
+          <li>Loss of information caused by circumstances outside our reasonable control</li>
+          <li>Your reliance on information provided by a third-party service</li>
+        </ul>
+        <p>Manga Tracker is not responsible for transactions, disputes, content, products, or services offered independently by third-party websites accessed through the Service.</p>
+        <p>Nothing in these Terms excludes or limits liability where doing so would be prohibited by applicable law.</p>
+      </section>
+
+      <section id="privacy">
+        <h2 class="section-title"><span class="section-number">24.</span>Privacy</h2>
+        <p>The collection, use, storage, processing, and disclosure of personal information through Manga Tracker is governed by the Manga Tracker Privacy Policy.</p>
+        <p>The Privacy Policy provides additional information about technologies and service providers that may be used to operate the Service, including, where applicable, services related to:</p>
+        <ul>
+          <li>Authentication</li>
+          <li>Cloud infrastructure and data storage</li>
+          <li>Advertising</li>
+          <li>Analytics</li>
+          <li>Crash and error reporting</li>
+          <li>Purchase validation and entitlement management</li>
+          <li>Other technical functionality</li>
+        </ul>
+        <p>You should review the Privacy Policy together with these Terms.</p>
+      </section>
+
+      <section id="third-party-services">
+        <h2 class="section-title"><span class="section-number">25.</span>Third-Party Services</h2>
+        <p>Manga Tracker may depend on third-party technology providers to operate portions of the Service.</p>
+        <p>These may include providers relating to:</p>
+        <ul>
+          <li>Apple App Store</li>
+          <li>Google Play</li>
+          <li>Purchase processing</li>
+          <li>RevenueCat</li>
+          <li>Cloud infrastructure</li>
+          <li>Authentication</li>
+          <li>Advertising</li>
+          <li>Analytics</li>
+          <li>Error and crash reporting</li>
+          <li>Other technical infrastructure</li>
+        </ul>
+        <p>Third-party providers may operate under their own terms, policies, and legal obligations.</p>
+        <p>You agree to comply with applicable third-party terms when your use of Manga Tracker involves those third-party services.</p>
+      </section>
+
+      <section id="app-store">
+        <h2 class="section-title"><span class="section-number">26.</span>App Store Terms</h2>
+        <p>If you downloaded Manga Tracker through Apple App Store, your use of the application is also subject to the applicable Apple Media Services terms and Apple's applicable end-user license terms.</p>
+        <p>If you downloaded Manga Tracker through Google Play, your use of the application and purchases made through Google Play may also be subject to Google's applicable terms and policies.</p>
+        <p>To the extent that mandatory app-store terms apply to your use of Manga Tracker or a purchase made through the applicable store, those mandatory requirements continue to apply.</p>
+        <p>Manga Tracker's Terms do not replace mandatory rights or obligations imposed by the applicable app marketplace.</p>
+      </section>
+
+      <section id="changes">
+        <h2 class="section-title"><span class="section-number">27.</span>Changes to These Terms</h2>
+        <p>We may update these Terms from time to time to reflect changes in:</p>
+        <ul>
+          <li>Manga Tracker features</li>
+          <li>Our business practices</li>
+          <li>Technology</li>
+          <li>Third-party services</li>
+          <li>App-store requirements</li>
+          <li>Legal or regulatory requirements</li>
+        </ul>
+        <p>When these Terms are updated, the “Last Updated” date at the beginning of the document will be revised.</p>
+        <p>Where required by applicable law, we will provide additional notice or obtain consent before material changes take effect.</p>
+        <p>Your continued use of the Service after updated Terms become effective constitutes acceptance of those updated Terms to the extent permitted by applicable law.</p>
+      </section>
+
+      <section id="law">
+        <h2 class="section-title"><span class="section-number">28.</span>Governing Law and Consumer Rights</h2>
+        <p>These Terms are governed by the laws applicable to the operator of Manga Tracker, subject to any mandatory laws or consumer protections that apply to you based on your country or region.</p>
+        <p>If you are entitled to mandatory consumer rights under applicable law, nothing in these Terms is intended to waive, restrict, or exclude those rights.</p>
+      </section>
+
+      <section id="severability">
+        <h2 class="section-title"><span class="section-number">29.</span>Severability</h2>
+        <p>If any provision of these Terms is found to be invalid, unlawful, or unenforceable, that provision will be interpreted or limited to the minimum extent necessary, and the remaining provisions will continue to apply to the extent permitted by law.</p>
+      </section>
+
+      <section id="agreement">
+        <h2 class="section-title"><span class="section-number">30.</span>Entire Agreement</h2>
+        <p>These Terms, together with the Manga Tracker Privacy Policy and any mandatory terms applicable through the platform from which you obtained the application, constitute the applicable terms governing your use of Manga Tracker.</p>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title"><span class="section-number">31.</span>Contact Us</h2>
+        <p>If you have questions, complaints, or requests regarding these Terms or Manga Tracker, please contact:</p>
+        <div class="contact-card">
+          <strong style="color:white">Manga Tracker</strong><br/>
+          Website: <a href="https://mangatracker.app/">https://mangatracker.app</a><br/>
+          Email: <a href="mailto:mangatrackerapp@gmail.com">mangatrackerapp@gmail.com</a>
+        </div>
+      </section>
+
+      <div class="agreement">By using Manga Tracker, you acknowledge that you have read and understood these Terms of Use and agree to be bound by them.</div>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 Manga Tracker. All rights reserved. ·
+    <a href="https://mangatracker.app/">mangatracker.app</a>
+  </footer>
+</body>
+</html>
