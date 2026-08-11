@@ -63,13 +63,19 @@
       font-size:20px;
     }
     .brand-mark{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;
-      color:#fff;
-      background:linear-gradient(135deg,var(--secondary),var(--primary));
-      box-shadow:0 8px 18px rgba(0,101,244,.24);
-      font-weight:900;
-    }
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+}
+
+.brand-mark img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  display:block;
+}
     .nav-links{
       display:flex;gap:24px;align-items:center;font-size:14px;font-weight:600;
     }
@@ -262,7 +268,9 @@
   <header class="topbar">
     <div class="nav">
       <div class="brand">
-        <div class="brand-mark">MT</div>
+        <div class="brand-mark">
+  <img src="/images/mt-icon.png" alt="Manga Tracker">
+</div>
         <span>Manga Tracker</span>
       </div>
       <nav class="nav-links" aria-label="Primary">
